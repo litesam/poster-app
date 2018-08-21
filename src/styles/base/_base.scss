@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  border: 0px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: whitesmoke;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
