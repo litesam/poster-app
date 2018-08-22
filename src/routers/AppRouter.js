@@ -6,6 +6,7 @@ import AddBlogPage from '../components/AddBlogPage'
 import Header from '../components/Header'
 import EditPostPage from '../components/EditPostPage'
 import LoginPage from '../components/LoginPage'
+import PostReadPage from '../components/PostReadPage'
 
 export const history = createHistory()
 
@@ -18,6 +19,7 @@ const AppRouter = () => (
           <Route path="/dashboard" component={BlogDashboardPage} />
           <Route path="/create" component={AddBlogPage} />
           <Route path="/edit/:id" component={EditPostPage} />
+          <Route path="read/:id" component={PostReadPage} />
         </Switch>
     </div>
   </Router>

@@ -1,15 +1,7 @@
 import React from 'react'
 import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
-import Remarkable from 'react-remarkable'
 import moment from 'moment'
-
-const styles = {
-  formatedText: {
-    wordBreak: 'break-all',
-    maxWidth: '200px'
-  }
-}
 
 const PostForm = ({
   values,
@@ -40,10 +32,6 @@ const PostForm = ({
       </div>
       <button type="submit">Submit</button>
     </Form>
-    <h1>{values.note}</h1>
-    <div style={styles.formatedText}>
-      <Remarkable source={values.description} />
-    </div>
   </div>
 )
 
