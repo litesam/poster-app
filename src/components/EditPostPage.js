@@ -6,11 +6,11 @@ import { startEditPost, startDeletePost } from '../actions/blog'
 class EditPostPage extends React.Component {
   onSubmit = (post) => {
     this.props.startEditPost(this.props.post.id, post)
-    this.props.history.push('/')
+    this.props.history.push('/dashboard')
   }
   onRemove = () => {
     this.props.startDeletePost(this.props.post.id)
-    this.props.history.push('/')
+    this.props.history.push('/dashboard')
   } 
   render() {
     const { post } = this.props

@@ -1,21 +1,26 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory'
+import { Router, Route, Switch } from 'react-router-dom'
 import BlogDashboardPage from '../components/BlogDashboardPage'
 import AddBlogPage from '../components/AddBlogPage'
 import Header from '../components/Header'
 import EditPostPage from '../components/EditPostPage'
+import LoginPage from '../components/LoginPage'
+
+export const history = createHistory()
 
 const AppRouter = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <div>
       <Header />
         <Switch>
-          <Route path="/" component={BlogDashboardPage} exact={true} />
+          <Route path="/" component={LoginPage} exact={true} />
+          <Route path="/dashboard" component={BlogDashboardPage} />
           <Route path="/create" component={AddBlogPage} />
           <Route path="/edit/:id" component={EditPostPage} />
         </Switch>
     </div>
-  </BrowserRouter>
+  </Router>
 )
 
 export { AppRouter as default }
