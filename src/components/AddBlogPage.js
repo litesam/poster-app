@@ -21,4 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
   startAddPost: (post) => dispatch(startAddPost(post))
 })
 
-export default connect(undefined, mapDispatchToProps)(AddBlogPage)
+const mapStateToProps = (state) => ({
+  name: state.auth.name
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddBlogPage)

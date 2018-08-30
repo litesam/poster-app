@@ -1,6 +1,7 @@
 import React from 'react'
-import PostForm from './PostForm'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import PostForm from './PostForm'
 import { startEditPost, startDeletePost } from '../actions/blog'
 
 class EditPostPage extends React.Component {
@@ -16,6 +17,7 @@ class EditPostPage extends React.Component {
     const { post } = this.props
     return (
       <div>
+        <Link to={`/read/${post.id}`}>Post is readable</Link>
         <PostForm {...post} onSubmit={this.onSubmit} />
         <button onClick={this.onRemove}>Remove</button>
       </div>

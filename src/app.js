@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import { firebase } from './firebase/firebase'
 import AppRouter, { history } from './routers/AppRouter'
 import configureStore from './store/createStore'
@@ -22,7 +21,7 @@ const App = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    store.dispatch(login(user.uid))
+    store.dispatch(login(user.uid, user.displayName))
     store.dispatch(startSetPost())
     ReactDOM.render(<App />, document.getElementById('app'))
     if (history.location.pathname === '/') {

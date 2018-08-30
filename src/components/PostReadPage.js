@@ -2,16 +2,18 @@ import React from 'react'
 import Remarkable from 'react-remarkable'
 import { connect } from 'react-redux'
 
-export const PostReadPage = ({ heading, description }) => (
-  <div>
-    <h1>{heading}</h1>
-    <Remarkable source={description} />
-  </div>
-)
+export const PostReadPage = ({ post }) => {
+  return (
+    <div>
+      <h1>{post.note}</h1>
+      <Remarkable source={post.description} />
+    </div>
+  )
+}
 
-const mapStateToProps = (state) => ({
-  heading: state.blog.note,
-  description: state.blog.description
-})
-
+const mapStateToProps = (state, props) => {
+  return {
+    post: state.posts.find(post => post.id === props.match.params.id)
+  }
+}
 export default connect(mapStateToProps)(PostReadPage)

@@ -20,7 +20,7 @@ export const PostList = ({ posts }) => (
 )
 
 const mapStateToProps = (state) => {
-  
+  console.log(state)
   return {
     posts: getVisiblePosts(state.posts, state.filters)
   }
