@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import PostForm from './PostForm'
 import { startEditPost, startDeletePost } from '../actions/blog'
+import getVisiblePosts from '../selectors/getVisiblePosts';
 
 class EditPostPage extends React.Component {
   onSubmit = (post) => {
@@ -26,7 +27,7 @@ class EditPostPage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  post: state.posts.find((post) => post.id === props.match.params.id)
+  post: getVisiblePosts(state.posts, state.filters).find((post) => post.id === props.match.params.id)
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -55,10 +55,12 @@ export const startSetPost = () => {
       
       snapshot.forEach((childSnapshot) => {
         const post = []
+        let uid = childSnapshot.key
 
         childSnapshot.child('posts').forEach((childsChildSnapshot) => {
           post.push({
             id: childsChildSnapshot.key,
+            uid,
             ...childsChildSnapshot.val()
           })
         })

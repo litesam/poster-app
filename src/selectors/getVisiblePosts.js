@@ -1,7 +1,16 @@
 import moment from 'moment'
 
 export default (posts, { text, startDate, endDate }) => {
-  return posts.filter(post => {
+  const poster = posts.map((post) => post.post)
+  const posters = []
+
+  poster.forEach((post) => {
+    post.forEach((pos) => {
+      posters.push(pos)
+    })
+  })
+
+  return posters.filter(post => {
     const createdAtMoment = moment(post.createdAt)
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true
     const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true

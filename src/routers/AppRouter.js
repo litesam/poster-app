@@ -19,7 +19,7 @@ const AppRouter = () => (
           <Route path="/dashboard" component={BlogDashboardPage} />
           <Route path="/create" component={AddBlogPage} />
           <Route path="/edit/:id" component={EditPostPage} />
-          <Route path="read/:id" component={PostReadPage} />
+          <Route path="/read/:id" component={PostReadPage} />
         </Switch>
     </div>
   </Router>
