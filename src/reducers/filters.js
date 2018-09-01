@@ -3,8 +3,8 @@ import moment from 'moment'
 // Filters reducer
 const filtersReducerDefaultState = {
     text: '',
-    startDate: moment().startOf('month'),
-    endDate: moment().endOf('month'),
+    startDate: null,
+    endDate: null,
     focused: null
 }
 

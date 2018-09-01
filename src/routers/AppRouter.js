@@ -7,6 +7,8 @@ import Header from '../components/Header'
 import EditPostPage from '../components/EditPostPage'
 import LoginPage from '../components/LoginPage'
 import PostReadPage from '../components/PostReadPage'
+import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 export const history = createHistory()
 
@@ -15,11 +17,11 @@ const AppRouter = () => (
     <div>
       <Header />
         <Switch>
-          <Route path="/" component={LoginPage} exact={true} />
-          <Route path="/dashboard" component={BlogDashboardPage} />
-          <Route path="/create" component={AddBlogPage} />
-          <Route path="/edit/:id" component={EditPostPage} />
-          <Route path="/read/:id" component={PostReadPage} />
+          <PublicRoute path="/" component={LoginPage} exact={true} />
+          <PrivateRoute path="/dashboard" component={BlogDashboardPage} />
+          <PrivateRoute path="/create" component={AddBlogPage} />
+          <PrivateRoute path="/edit/:id" component={EditPostPage} />
+          <PublicRoute path="/read/:id" component={PostReadPage} />
         </Switch>
     </div>
   </Router>
