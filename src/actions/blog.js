@@ -22,7 +22,6 @@ export const startAddPost = (postData) => {
     const post = { description, note, createdAt }
     const uid = getState().auth.id
     const uName = getState().auth.name
-    console.log(uName)
     return database.ref(`users/${uid}/posts`).push({
       note,
       createdAt,
@@ -47,7 +46,7 @@ const setPost = (posts) => ({
 })
 
 export const startSetPost = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     
     return database.ref(`users`).once('value')
     .then((snapshot) => {

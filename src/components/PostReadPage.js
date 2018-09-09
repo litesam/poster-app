@@ -13,6 +13,14 @@ export const PostReadPage = ({ post }) => {
 }
 
 const mapStateToProps = (state, props) => {
+  const poster = state.posts.map((post) => post.post)
+  const posters = []
+
+  poster.forEach((post) => {
+    post.forEach((pos) => {
+      posters.push(pos)
+    })
+  })
   return {
     post: getVisiblePosts(state.posts, state.filters).find((post) => post.id === props.match.params.id)
   }

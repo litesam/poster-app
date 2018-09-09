@@ -13,7 +13,7 @@ class EditPostPage extends React.Component {
   onRemove = () => {
     this.props.startDeletePost(this.props.post.id)
     this.props.history.push('/dashboard')
-  } 
+  }
   render() {
     const { post } = this.props
     return (
@@ -26,9 +26,19 @@ class EditPostPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
-  post: getVisiblePosts(state.posts, state.filters).find((post) => post.id === props.match.params.id)
-})
+const mapStateToProps = (state, props) => {
+  const poster = state.posts.map((post) => post.post)
+  const posters = []
+
+  poster.forEach((post) => {
+    post.forEach((pos) => {
+      posters.push(pos)
+    })
+  })
+  return {
+    post: getVisiblePosts(posters, state.filters).find((post) => post.id === props.match.params.id)
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
   startEditPost: (id, post) => dispatch(startEditPost(id, post)),
