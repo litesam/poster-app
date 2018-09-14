@@ -6,10 +6,11 @@ class LoginPage extends React.Component {
   startLogin = () => {
     this.props.startLogin()
   }
+
   render() {
     return (
       <div>
-        <button onClick={this.startLogin}>Login</button>
+        <button type="button" onClick={this.startLogin}>Login</button>
       </div>
     )
   }

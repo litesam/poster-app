@@ -27,18 +27,10 @@ export const PostList = ({ posts, authId, postLength }) => {
 }
 
 const mapStateToProps = (state) => {
-  const poster = state.posts.map((post) => post.post)
-  const posters = []
-
-  poster.forEach((post) => {
-    post.forEach((pos) => {
-      posters.push(pos)
-    })
-  })
   return {
     authId: state.auth.id,
     postLength: state.posts.length,
-    posts: getVisiblePosts(posters, state.filters)
+    posts: getVisiblePosts(state.posts, state.filters)
   }
 }
 

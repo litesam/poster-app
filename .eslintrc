@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "experimentalClassProperties": true,
+      "arrowFunctions": true,
+      "objectLiteralShorthandProperties": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "arrow-parens": "off",
+    "comma-dangle": "off",
+    "eol-last": "off",
+    "import/no-named-as-default": 0,
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "no-shadow": "off",
+    "no-trailing-spaces": "off",
+    "no-underscore-dangle": "off",
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-boolean-value": 0,
+    "react/destructuring-assignment": [ 0, "always", { "ignoreClassFields": true }],
+    "react/jsx-indent": [ 2, 2 ],
+    "semi": "off"
+  }
+}

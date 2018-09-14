@@ -1,7 +1,7 @@
 const blogReducersDefaultState = []
 
 export default (state = blogReducersDefaultState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_POST':
       return [...state, action.post]
     case 'EDIT_POST':
@@ -11,9 +11,8 @@ export default (state = blogReducersDefaultState, action) => {
             ...post,
             ...action.updates
           }
-        } else {
-          return post
         }
+        return post 
       })
     case 'DELETE_POST':
       return state.filter((post) => !(post.id === action.id))

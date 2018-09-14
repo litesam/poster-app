@@ -1,8 +1,6 @@
 import moment from 'moment'
 
 export default (posts, { text, startDate, endDate }) => {
-
-
   return posts.filter(post => {
     const createdAtMoment = moment(post.createdAt)
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true

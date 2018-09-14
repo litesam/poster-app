@@ -28,7 +28,7 @@ const PostForm = ({
           value={values.description}
           onChange={handleChange}
           maxLength="1024"
-        ></textarea>
+        />
       </div>
       <button type="submit">Submit</button>
     </Form>
