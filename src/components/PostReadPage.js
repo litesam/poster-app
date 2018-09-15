@@ -1,14 +1,21 @@
 import React from 'react'
-import Remarkable from 'react-remarkable'
 import { connect } from 'react-redux'
 
-export const PostReadPage = ({ post }) => {
-  return (
-    <div>
-      <h1>{post.note}</h1>
-      <Remarkable source={post.description} />
-    </div>
-  )
+class PostReadPage extends React.Component {
+  createMarkup = () => {
+    return { __html: this.props.post.description }
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.props.post.note}</h1>
+        <div
+          dangerouslySetInnerHTML={this.createMarkup()} 
+        />
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state, props) => {

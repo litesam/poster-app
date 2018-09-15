@@ -1,6 +1,6 @@
 import React from 'react'
 import createHistory from 'history/createBrowserHistory'
-import { Router, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import BlogDashboardPage from '../components/BlogDashboardPage'
 import AddBlogPage from '../components/AddBlogPage'
 import Header from '../components/Header'
@@ -21,7 +21,7 @@ const AppRouter = () => (
         <PrivateRoute path="/dashboard" component={BlogDashboardPage} />
         <PrivateRoute path="/create" component={AddBlogPage} />
         <PrivateRoute path="/edit/:id" component={EditPostPage} />
-        <PublicRoute path="/read/:id" component={PostReadPage} />
+        <Route path="/read/:id" component={PostReadPage} />
       </Switch>
     </div>
   </Router>

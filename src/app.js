@@ -6,6 +6,7 @@ import AppRouter, { history } from './routers/AppRouter'
 import configureStore from './store/createStore'
 import 'normalize.css'
 import './styles/styles.scss'
+import 'react-dates/lib/css/_datepicker.css'
 import { startSetPost } from './actions/blog';
 import { login, logout } from './actions/auth';
 
@@ -33,3 +34,5 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push('/')
   }
 })
+
+export { App as default }
