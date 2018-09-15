@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Button from '@material-ui/core/Button'
 import { startLogin } from '../actions/auth';
 
 class LoginPage extends React.Component {
@@ -10,7 +11,14 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div>
-        <button type="button" onClick={this.startLogin}>Login</button>
+        <Button 
+          variant="contained" 
+          type="button" 
+          color="primary"
+          onClick={this.startLogin}
+        >
+          Login
+        </Button>
       </div>
     )
   }

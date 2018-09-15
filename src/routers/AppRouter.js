@@ -3,7 +3,6 @@ import createHistory from 'history/createBrowserHistory'
 import { Router, Route, Switch } from 'react-router-dom'
 import BlogDashboardPage from '../components/BlogDashboardPage'
 import AddBlogPage from '../components/AddBlogPage'
-import Header from '../components/Header'
 import EditPostPage from '../components/EditPostPage'
 import LoginPage from '../components/LoginPage'
 import PostReadPage from '../components/PostReadPage'
@@ -15,7 +14,6 @@ export const history = createHistory()
 const AppRouter = () => (
   <Router history={history}>
     <div>
-      <Header />
       <Switch>
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PrivateRoute path="/dashboard" component={BlogDashboardPage} />

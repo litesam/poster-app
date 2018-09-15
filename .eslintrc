@@ -26,6 +26,8 @@
     "no-shadow": "off",
     "no-trailing-spaces": "off",
     "no-underscore-dangle": "off",
+    "no-use-before-define":"off",
+    "operator-linebreak": "off",
     "react/prop-types": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-boolean-value": 0,
